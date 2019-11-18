@@ -1,4 +1,4 @@
-## 社区  p9
+## 社区  p13
 #2019/11/12
 
 #  git命令
@@ -8,9 +8,9 @@
 #  git push
 
 ##资料
-[github文档](https://developer.github.com/apps/building-oauth-apps/)
+[github oauth文档](https://developer.github.com/apps/building-oauth-apps/)
 
-
+# ctrl e   打开最近的文档
 
 
 ## 工具
