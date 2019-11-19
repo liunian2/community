@@ -2,6 +2,8 @@ package life.sw.community.controller;
 
 import life.sw.community.dto.AccessTokenDto;
 import life.sw.community.dto.GithubUser;
+import life.sw.community.mapper.UserMapper;
+import life.sw.community.model.User;
 import life.sw.community.provider.GithubProvider;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
@@ -10,12 +12,15 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.HttpServletRequest;
+import java.util.UUID;
 
 @Controller
 public class AuthorizeController {
 
     @Autowired
     private GithubProvider githubProvider;
+    @Autowired
+    private UserMapper userMapper;
 
     @Value("${github.client.id}")
     private String clientId;
@@ -35,11 +40,17 @@ public class AuthorizeController {
         accessTokenDto.setCode(code);
         accessTokenDto.setRedirect_uri(redirectUrl);
         accessTokenDto.setState(state);
-        String token = githubProvider.getAccessToken(accessTokenDto);  //ctrl alt v
+        String token = githubProvider.getAccessToken(accessTokenDto);
         GithubUser githubUser = githubProvider.getUser(token);
-        //System.out.println(githubUser.getName());
         if(githubUser != null){
             //登入成功
+            User user = new User();
+            user.setToken(UUID.randomUUID().toString());
+            user.setName(githubUser.getName());
+            user.setAccountId(String.valueOf(githubUser.getId()));
+            user.setGmtCreate(System.currentTimeMillis());
+            user.setGmtModified(user.getGmtCreate());
+            userMapper.insert(user);
             request.getSession().setAttribute("user", githubUser);
             return "redirect:/";
         }else{
@@ -47,6 +58,5 @@ public class AuthorizeController {
             return "redirect:/";
         }
     }
-
     //https://api.github.com/user?oauth_token=36dc1483e4399ec146833215cea45bb31462f9ac
 }
