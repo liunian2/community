@@ -7,7 +7,11 @@
 #  git commit -m "备注"
 #  git push
 
+
 # git pull 从远程拉取代码
+
+#添加
+
 
 ##资料
 [github oauth文档](https://developer.github.com/apps/building-oauth-apps/)
@@ -26,13 +30,12 @@
 
 ## 脚本
 ```sql
-CREATE CACHED TABLE PUBLIC.USER(
+CREATE TABLE USER(
     ID INT AUTO_INCREMENT PRIMARY KEY NOT NULL,
-    NAME VARCHAR(50),
     ACCOUNT_ID VARCHAR(100),
     TOKEN CHAR(36),
     GMT_CREATE BIGINT,
     GMT_MODIFIED BIGINT
-)
+);
 ```
 
