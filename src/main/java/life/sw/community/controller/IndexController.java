@@ -1,16 +1,38 @@
 package life.sw.community.controller;
 
+import life.sw.community.mapper.UserMapper;
+import life.sw.community.model.User;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServletRequest;
+
 @Controller
 public class IndexController {
 
+    @Autowired
+    private UserMapper userMapper;
     @GetMapping("/")
-    public String index(@RequestParam(name = "name", required=false)String name ,Model model){
+    public String index(@RequestParam(name = "name", required=false)String name , Model model,
+                        HttpServletRequest request){
         model.addAttribute("name",name);
+        Cookie[] cookies = request.getCookies();
+        if(cookies != null && cookies.length > 0){
+            for (Cookie cookie : cookies) {
+                if(cookie.getName().equals("token")){
+                    String token = cookie.getValue();
+                    User user = userMapper.findByToken(token);
+                    if(user != null){
+                        request.getSession().setAttribute("user", user);
+                    }
+                    break;
+                }
+            }
+        }
         return "index";
     }
 }

@@ -1,4 +1,4 @@
-## 社区  p18
+## 社区  p19
 #2019/11/12
 
 #  git命令
@@ -6,7 +6,7 @@
 #  git status
 #  git commit -m "备注"
 #  git push
-# git pull 从远程拉取代码
+#  git pull 从远程拉取代码
 
 
 
@@ -35,4 +35,9 @@ CREATE TABLE USER(
     GMT_MODIFIED BIGINT
 );
 ```
+
+
+## flyway
+
+#  mvn flyway:migrate
 
