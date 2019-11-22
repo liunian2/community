@@ -1,7 +1,11 @@
 package life.sw.community.controller;
 
+import life.sw.community.dto.QuestionDto;
+import life.sw.community.mapper.QuestionMapper;
 import life.sw.community.mapper.UserMapper;
+import life.sw.community.model.Question;
 import life.sw.community.model.User;
+import life.sw.community.service.QuestionService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -10,12 +14,16 @@ import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.servlet.http.Cookie;
 import javax.servlet.http.HttpServletRequest;
+import java.util.List;
 
 @Controller
 public class IndexController {
 
     @Autowired
     private UserMapper userMapper;
+    @Autowired
+    private QuestionService questionService;
+
     @GetMapping("/")
     public String index(@RequestParam(name = "name", required=false)String name , Model model,
                         HttpServletRequest request){
@@ -33,6 +41,9 @@ public class IndexController {
                 }
             }
         }
+
+        List<QuestionDto> questionList = questionService.list();
+        model.addAttribute("questions", questionList);
         return "index";
     }
 }
