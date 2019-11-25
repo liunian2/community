@@ -1,5 +1,6 @@
 package life.sw.community.service;
 
+import life.sw.community.dto.PagenationDto;
 import life.sw.community.dto.QuestionDto;
 import life.sw.community.mapper.QuestionMapper;
 import life.sw.community.mapper.UserMapper;
@@ -19,9 +20,19 @@ public class QuestionService {
     @Autowired
     private UserMapper userMapper;
 
-    public List<QuestionDto> list() {
+    public PagenationDto list(Integer page, Integer size) {
+        PagenationDto pagenationDto = new PagenationDto();
+        int total = questionMapper.count();
+        pagenationDto.setPagenation(total, page, size);
+        if(page < 1){
+            page = 1;
+        }
+        if(page > pagenationDto.getTotalPage()){
+            page = pagenationDto.getTotalPage();
+        }
+        Integer offset = size * (page - 1);
         List<QuestionDto> questionDtos = new ArrayList<>();
-        List<Question> questionList = questionMapper.list();
+        List<Question> questionList = questionMapper.list(offset, size);
         for(Question question : questionList){
             User user = userMapper.findById(question.getCreator());
             QuestionDto questionDto = new QuestionDto();
@@ -29,6 +40,7 @@ public class QuestionService {
             questionDto.setUser(user);
             questionDtos.add(questionDto);
         }
-        return questionDtos;
+        pagenationDto.setQuestions(questionDtos);
+        return pagenationDto;
     }
 }

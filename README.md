@@ -1,4 +1,4 @@
-## 社区  p23 47 time
+## 社区  p26 68
 #2019/11/12
 
 #  git命令
@@ -22,8 +22,16 @@
 
 ## 工具
 [visual](https://www.visual-paradigm.com)
+[bootstrap](https://v3.bootcss.com/)
+[菜鸟教程](https://www.runoob.com/)
+[maven仓库](https://mvnrepository.com/)
+[springboot文档](https://docs.spring.io/spring-boot/docs/2.0.0.RC2/reference/htmlsingle/)
+[okHttp](https://square.github.io/okhttp/)
+[lombok](https://projectlombok.org/)
+[alibaba](https://developer.aliyun.com/special/tech-java?spm=a2c41.13037006.0.0%20csdn)
 
-
+[elastic](https://elasticsearch.cn/explore)
+[github](https://github.com/liunian2/community)
 
 ## 脚本
 ```sql
@@ -40,4 +48,10 @@ CREATE TABLE USER(
 ## flyway
 
 #  mvn flyway:migrate
+
+
+# JRebel 热部署工具(收费)
+# spring-boot-devtools 热部署工具
+
+# ctrl alt shift ?  打开idea配置  例如配置项目运行时自动编译
 
