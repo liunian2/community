@@ -29,9 +29,10 @@
 [okHttp](https://square.github.io/okhttp/)
 [lombok](https://projectlombok.org/)
 [alibaba](https://developer.aliyun.com/special/tech-java?spm=a2c41.13037006.0.0%20csdn)
+[thymeleaf](https://www.thymeleaf.org/)
 
 [elastic](https://elasticsearch.cn/explore)
-[github](https://github.com/liunian2/community)
+[github-community](https://github.com/liunian2/community)
 
 ## 脚本
 ```sql
