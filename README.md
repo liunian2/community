@@ -41,8 +41,7 @@ CREATE TABLE USER(
     GMT_MODIFIED BIGINT
 );
 ```
-
-##flyway
+# flyway
 #  mvn flyway:migrate
 # JRebel 热部署工具(收费)
 # spring-boot-devtools 热部署工具
