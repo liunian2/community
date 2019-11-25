@@ -1,4 +1,4 @@
-## 社区  p26 68
+## 社区  p28 29
 ## git命令
 #  git add .
 #  git status
@@ -46,5 +46,8 @@ CREATE TABLE USER(
 # JRebel 热部署工具(收费)
 # spring-boot-devtools 热部署工具
 
+## chrom插件
+# onetab
+# liveReload
 
 
