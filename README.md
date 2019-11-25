@@ -1,24 +1,21 @@
 ## 社区  p26 68
-#2019/11/12
-
-#  git命令
+## git命令
 #  git add .
 #  git status
 #  git commit -m "备注"
 #  git push
 #  git pull 从远程拉取代码
 
-
-
-##资料
+## 资料
 [github oauth文档](https://developer.github.com/apps/building-oauth-apps/)
 
+## 快捷键
 # ctrl e   打开最近的文档
 # ctrl alt o  移除没有用的import
 # shift shift 快速查找
 # alt insert get/set
 # ctrl alt v 快速生成变量new user()
-
+# ctrl alt shift ?  打开idea配置  例如配置项目运行时自动编译
 
 ## 工具
 [visual](https://www.visual-paradigm.com)
@@ -45,14 +42,10 @@ CREATE TABLE USER(
 );
 ```
 
-
-## flyway
-
+##flyway
 #  mvn flyway:migrate
-
-
 # JRebel 热部署工具(收费)
 # spring-boot-devtools 热部署工具
 
-# ctrl alt shift ?  打开idea配置  例如配置项目运行时自动编译
+
 
