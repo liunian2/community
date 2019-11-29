@@ -1,4 +1,4 @@
-## 社区  p28 29
+## 社区  p34
 ## git命令
 #  git add .
 #  git status
@@ -12,10 +12,11 @@
 ## 快捷键
 # ctrl e   打开最近的文档
 # ctrl alt o  移除没有用的import
-# shift shift 快速查找
+# shift shift 快速全局查找
 # alt insert get/set
 # ctrl alt v 快速生成变量new user()
 # ctrl alt shift ?  打开idea配置  例如配置项目运行时自动编译
+# ctrl alt 左箭头  快速打开上一次查看的位置
 
 ## 工具
 [visual](https://www.visual-paradigm.com)
@@ -23,10 +24,12 @@
 [菜鸟教程](https://www.runoob.com/)
 [maven仓库](https://mvnrepository.com/)
 [springboot文档](https://docs.spring.io/spring-boot/docs/2.0.0.RC2/reference/htmlsingle/)
+[spring文档](https://docs.spring.io/spring/docs/current/spring-framework-reference/web-reactive.html#spring-webflux)
 [okHttp](https://square.github.io/okhttp/)
 [lombok](https://projectlombok.org/)
 [alibaba](https://developer.aliyun.com/special/tech-java?spm=a2c41.13037006.0.0%20csdn)
 [thymeleaf](https://www.thymeleaf.org/)
+[Mybatis Generator](http://mybatis.org/generator/)
 
 [elastic](https://elasticsearch.cn/explore)
 [github-community](https://github.com/liunian2/community)

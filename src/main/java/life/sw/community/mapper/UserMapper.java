@@ -1,10 +1,7 @@
 package life.sw.community.mapper;
 
 import life.sw.community.model.User;
-import org.apache.ibatis.annotations.Insert;
-import org.apache.ibatis.annotations.Mapper;
-import org.apache.ibatis.annotations.Param;
-import org.apache.ibatis.annotations.Select;
+import org.apache.ibatis.annotations.*;
 
 @Mapper
 public interface UserMapper {
@@ -16,5 +13,9 @@ public interface UserMapper {
     User findByToken(@Param("token") String token);
     @Select("select * from user where id = #{id}")
     User findById(@Param("id")Integer id);
+    @Select("select * from user where account_Id = #{accountId}")
+    User findByAccountId(@Param("accountId")String accountId);
+    @Update("update user set name=#{name},token=#{token},gmt_modified=#{gmtModified},avatar_url=#{avatarUrl} where id = #{id}")
+    void update(User dbUser);
     //如果参数是对象就可以直接写，不是的使用@Param
 }
