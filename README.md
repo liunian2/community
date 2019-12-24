@@ -1,14 +1,13 @@
 ## 社区  p34
+```text
 ## git命令
 #  git add .
 #  git status
 #  git commit -m "备注"
 #  git push
 #  git pull 从远程拉取代码
-
-## 资料
-[github oauth文档](https://developer.github.com/apps/building-oauth-apps/)
-
+```
+```text
 ## 快捷键
 # ctrl e   打开最近的文档
 # ctrl alt o  移除没有用的import
@@ -17,6 +16,10 @@
 # ctrl alt v 快速生成变量new user()
 # ctrl alt shift ?  打开idea配置  例如配置项目运行时自动编译
 # ctrl alt 左箭头  快速打开上一次查看的位置
+```
+
+## 资料
+[github oauth文档](https://developer.github.com/apps/building-oauth-apps/)
 
 ## 工具
 [visual](https://www.visual-paradigm.com)
@@ -45,7 +48,9 @@ CREATE TABLE USER(
 );
 ```
 # flyway
-#  mvn flyway:migrate
+# mvn flyway:migrate
+# mvn -Dmybatis.generator.overwrite=true mybatis-generator:generate
+
 # JRebel 热部署工具(收费)
 # spring-boot-devtools 热部署工具
 
@@ -53,4 +58,17 @@ CREATE TABLE USER(
 # onetab
 # liveReload
 
+```text
+vi ~/.bash_profile
+source ~/.bash_profile
 
+#set java environment
+export JAVA_HOME=G:/IDEA/jdk8/jdk-8u221
+export JRE_HOME=${JAVA_HOME}/jre
+export CLASSPATH=.:$JAVA_HOME/lib:$JRE_HOME/lib:$CLASSPATH
+export PATH=$JAVA_HOME/bin:$JRE_HOME/bin:$JAVA_HOME:$PATH
+
+#set maven environment
+export MAVEN_HOME=G:/IDEA/IntelliJ IDEA 2018.2.2/plugins/maven/lib/maven3
+export PATH=$MAVEN_HOME$/bin:$PATH
+```
